@@ -49,16 +49,18 @@ class AddContact extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='inputDiv'>
                 <form onSubmit={this.onSubmit}>
 
                     <input
+                    style={{width: 1080+'px'}}
                     type='text'
                     placeholder='name' className='form-control' 
                     onChange={this.getName} 
                     required
                     />
                     <input
+                    style={{width: 1080+'px'}}
                     type='text'
                     placeholder='Adress' 
                     className='form-control'
@@ -66,6 +68,7 @@ class AddContact extends React.Component {
                     required
                     />
                     <input 
+                    style={{width: 1080+'px'}}
                     type='text' 
                     placeholder='telnum' 
                     className='form-control'
@@ -73,12 +76,14 @@ class AddContact extends React.Component {
                     required
                      />
                     <input type='email' 
+                    style={{width: 1080+'px'}}
                     placeholder='email' className='form-control'
                     onChange={this.getEmail}
                     required
                      />
 
                     <input type='number'
+                    style={{width: 1080+'px'}}
                     min='1' max='99' 
                     placeholder='avatar' className='form-control' 
                     onChange={this.getAvatar}

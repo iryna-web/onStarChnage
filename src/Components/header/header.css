@@ -1,0 +1,26 @@
+nav{
+    margin-left: -15px;
+    padding-left: 35px;
+    background-color: #d7eff5;
+    height: 60px;
+    width:100%;
+    background-image: url(../../img/backround.jpg);
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+}
+a{
+    text-decoration: none;
+    display: block;
+    color: indigo;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Bellota Text', cursive;
+}
+li{
+    margin-right: 30px;
+
+}

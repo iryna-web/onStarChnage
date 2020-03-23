@@ -8,7 +8,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 // Components
 import ContactList from "./Components/ContactList/ContactList";
 import AddContact from './Components/add/add_contact';
-import {stat} from 'fs'
+import Header from './Components/header/header';
+
 
 
 
@@ -18,9 +19,9 @@ class App extends React.Component {
       {
         id: uuid(),
         name: "Britney Anders",
-        address: "Rivne, Best street",
+        address: "Podolsk, Best street",
         avatar: 50,
-        phone: "(067)888-77-44",
+        phone: "(000)888-77-44",
         gender: "women",
         email: "anders@gmail.com",
         star: true
@@ -28,9 +29,9 @@ class App extends React.Component {
       {
         id: uuid(),
         name: "Will Smith",
-        address: "Lviv, Zamarstunivska 12",
+        address: "Washington, Zamarstunivska 12",
         avatar: 12,
-        phone: "(050)888-33-44",
+        phone: "(000)88444-33-44",
         gender: "men",
         email: "will@smitj.com",
         star: false
@@ -38,9 +39,9 @@ class App extends React.Component {
       {
         id: uuid(),
         name: "Will Street",
-        address: "Odessa, Beribasivska 121",
+        address: "Berlin, Beribasivska 121",
         avatar: 67,
-        phone: "(097)784-77-12",
+        phone: "(0833)78499-77-12",
         gender: "men",
         email: "street@gmail.com",
         star: false
@@ -106,13 +107,7 @@ onDeleteContact = id => {
             aria-expanded="true"
           >
 
-            <nav>
-              <ul>
-                <li>
-                  <a href='#'>HeaderComponent</a>
-                </li>
-              </ul>
-              </nav>
+          <Header />
             <Router>
               <Switch>
                 <Route
