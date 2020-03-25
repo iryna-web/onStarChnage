@@ -1,20 +1,23 @@
 import React from 'react';
-import './add_contact.css';
+import './editcontact.css';
 import {Redirect} from 'react-router-dom';
 
 
 
 
-class AddContact extends React.Component {
+class EditContact extends React.Component {
     state = {
-        name: null,
-        adress: null,
-        gender: null,
-        email: null,
-        telnum: null,
-        avatar: null,
+        id: this.props.currenContact.id,
+        name: this.props.currenContact.name,
+        address: this.props.currenContact.address,
+        gender: this.props.currenContact.gender,
+        email: this.props.currenContact.email,
+        phone: this.props.currenContact.phone,
+        avatar: this.props.currenContact.avatar,
         isRedirect:false
     }
+
+   
 
     getAvatar = event => {
         this.setState({
@@ -34,7 +37,7 @@ class AddContact extends React.Component {
     }
     gettelnum = event => {
         this.setState({
-            telnum: event.target.value
+            phone: event.target.value
         })
     }
     getEmail = event => {
@@ -44,15 +47,19 @@ class AddContact extends React.Component {
     }
     onSubmit = event => {
         event.preventDefault()
-        const { name, adress, telnum, email, avatar, gender} = this.state
-        this.props.onaddcontact(name, adress, telnum, email, avatar, gender)
+        const { id, name, adress, phone, email, avatar} = this.state
+        this.props.onEditCurrentContact(
+            id, name,adress,phone, email, avatar
+        )
         this.setState({
             isRedirect:true
         })
     }
 
 
-    render() {
+    render()
+    {
+        const{name, address, phone, email, avatar}=this.state
         if (this.state.isRedirect){
             return <Redirect to='/' />
         }
@@ -63,14 +70,14 @@ class AddContact extends React.Component {
                     <input
                     style={{width: 1080+'px'}}
                     type='text'
-                    placeholder='name' className='form-control' 
+                    placeholder={name} className='form-control' 
                     onChange={this.getName} 
                     required
                     />
                     <input
                     style={{width: 1080+'px'}}
                     type='text'
-                    placeholder='Adress' 
+                    placeholder={address} 
                     className='form-control'
                     onChange={this.getAdress} 
                     required
@@ -78,14 +85,14 @@ class AddContact extends React.Component {
                     <input 
                     style={{width: 1080+'px'}}
                     type='text' 
-                    placeholder='telnum' 
+                    placeholder={phone} 
                     className='form-control'
                     onChange={this.gettelnum}
                     required
                      />
                     <input type='email' 
                     style={{width: 1080+'px'}}
-                    placeholder='email' className='form-control'
+                    placeholder={email} className='form-control'
                     onChange={this.getEmail}
                     required
                      />
@@ -93,25 +100,12 @@ class AddContact extends React.Component {
                     <input type='number'
                     style={{width: 1080+'px'}}
                     min='1' max='99' 
-                    placeholder='avatar' className='form-control' 
+                    placeholder={avatar} className='form-control' 
                     onChange={this.getAvatar}
                     required
                      />
-                     
-                     
-                     
-                    <input 
-                    type='text'
-                    style={{width: 1080+'px'}}
-                    placeholder='gender(men/woman)'
-                    className='form-control'
-                    onChange={this.getGender}
-                    required
-                    />
 
-
-
-
+                    
 
 
                      {/*
@@ -124,7 +118,7 @@ class AddContact extends React.Component {
                      */}
 
                     
-                    <button className='btn btn-success' type='submit'>Add new Contact</button>
+                    <button className='btn btn-success' type='submit'>Save changes</button>
                 </form>
             </div>
         );
@@ -132,4 +126,4 @@ class AddContact extends React.Component {
 }
 
 
-export default AddContact;
+export default EditContact;

@@ -6,7 +6,7 @@ import ContactItem from "./ContactListItem/ContactItem";
 
 
 
-const ContactList = ({ List, onStarChange, OnDeleteContact}) => {
+const ContactList = ({ List, onStarChange, OnDeleteContact, onEditContact}) => {
   //console.log("ContactList => ", List);
 
 
@@ -24,6 +24,7 @@ const ContactList = ({ List, onStarChange, OnDeleteContact}) => {
         star={item.star}
         onStarChange={() => onStarChange(item.id)}
         OnDeleteContact={()=>OnDeleteContact(item.id)}
+        onEditContact={()=>onEditContact(item.id)}
       />
     );
   });

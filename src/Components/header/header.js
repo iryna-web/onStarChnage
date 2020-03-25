@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './header.css'
+import {Link} from 'react-router-dom'
 
 
 class Header extends Component{
@@ -13,12 +14,12 @@ class Header extends Component{
                     <div className='col-12'>
             <nav>
             <ul>
-              <li><a href='/'>Main page</a></li>
-              <li><a href='/contact'>Add new contact</a></li>
-              <li> <a href='#'> Favourite contacts </a></li>
-              <li> <a href='#'> Recent contacts</a></li>
-              <li> <a href='#'> Recently deleted contacts</a></li>
-              <li><a href='#'> Family contacts</a></li>              
+              <li><Link to='/'>Main page</Link></li>
+              <li><Link to='/contact'>Add new contact</Link></li>
+              <li> <Link to='/edit'> Edit contact </Link></li>
+              <li> <Link to='#'> Recent contacts</Link></li>
+              <li> <Link to='#'> Favourite contacts</Link></li>
+              <li><Link to='#'> Family contacts</Link></li>              
             </ul>
             </nav>
             </div>
