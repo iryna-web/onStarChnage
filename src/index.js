@@ -69,7 +69,7 @@ onaddcontact=(name, adress, telnum, email, avatar)=>{
   let newContact={
     id: uuid(),
     name: name,
-    address: adress,
+    address: address,
     avatar: avatar,
     phone: telnum,
     gender: "woman",
